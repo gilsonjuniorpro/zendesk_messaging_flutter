@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  zendesk_messaging: ^2.7.7
 
 
   # The following adds the Cupertino Icons font to your application.
