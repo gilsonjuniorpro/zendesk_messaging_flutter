@@ -6,7 +6,7 @@ import 'app_constants.dart';
 
 class AppContext {
 
-  ZendeskFields getInfoToZendesk() {
+  /*ZendeskFields getInfoToZendesk() {
     String? versionCode;
     String? appBrandName;
     String? versionName;
@@ -53,6 +53,51 @@ class AppContext {
         country: _getCountryCode(country),
         currentSite: currentSite != null ? currentSite : '',
         mealPlanName: mealPlanName != null ? mealPlanName : '',
+    );
+  }*/
+
+  Future<ZendeskFields> getInfoToZendesk() async {
+    PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    String versionCode = packageInfo.buildNumber;
+    String appBrandName = packageInfo.appName;
+    String versionName = packageInfo.version;
+
+    DeviceInfoPlugin deviceInfo = DeviceInfoPlugin();
+    String model = '';
+    String iDevice = '';
+
+    if (Platform.isAndroid) {
+      AndroidDeviceInfo androidInfo = await deviceInfo.androidInfo;
+      model = androidInfo.model ?? '';
+      iDevice = androidInfo.device ?? '';
+    }
+
+    String deviceType = iDevice;
+    String deviceOSVersion = Platform.operatingSystemVersion;
+    String appBrand = appBrandName;
+    String appVersionName = versionName;
+    String appVersionCode = versionCode;
+    String device = model;
+    String accountEmail = "";
+    String fullName = "";
+    String phoneNumber = "";
+    String country = "";
+    String currentSite = "";
+    String mealPlanName = "";
+
+    return ZendeskFields(
+      deviceType: deviceType,
+      deviceOSVersion: deviceOSVersion,
+      appBrand: appBrand,
+      appVersionName: appVersionName,
+      appVersionCode: appVersionCode,
+      device: device,
+      accountEmail: accountEmail,
+      fullName: fullName,
+      phoneNumber: phoneNumber,
+      country: _getCountryCode(country),
+      currentSite: currentSite,
+      mealPlanName: mealPlanName,
     );
   }
 

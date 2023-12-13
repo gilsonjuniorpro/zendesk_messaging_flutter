@@ -85,11 +85,11 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  void _setFields() async {
+  Future<void> _setFields() async {
     Map<String, String> fieldMaps = {};
 
     AppContext appContext = AppContext();
-    ZendeskFields zendeskFields = appContext.getInfoToZendesk();
+    ZendeskFields zendeskFields = await appContext.getInfoToZendesk();
     //ZendeskFields zendeskFields = appContext.getFakeInfoToZendesk();
 
     fieldMaps[AppConstants.PROD_ZENDESK_ID_DEVICE_TYPE] = zendeskFields.deviceType;
@@ -104,9 +104,9 @@ class _MyHomePageState extends State<MyHomePage> {
     await ZendeskMessaging.setConversationFields(fieldMaps);
   }
 
-  void _setTags() async {
+  Future<void> _setTags() async {
     AppContext appContext = AppContext();
-    ZendeskFields zendeskFields = appContext.getInfoToZendesk();
+    ZendeskFields zendeskFields = await appContext.getInfoToZendesk();
     //ZendeskFields zendeskFields = appContext.getFakeInfoToZendesk();
     final tags = [
       AppConstants.MOBILE_TICKET_TYPE_TAG,
