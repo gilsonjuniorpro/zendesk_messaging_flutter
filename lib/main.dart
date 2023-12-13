@@ -60,9 +60,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
             ElevatedButton(
               onPressed: () => {
                 ZendeskMessaging.show(),
@@ -74,14 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => ZendeskMessaging.initialize(
-          androidChannelKey: androidChannelKey,
-          iosChannelKey: iosChannelKey,
-        ),
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
