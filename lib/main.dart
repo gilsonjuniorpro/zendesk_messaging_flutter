@@ -37,8 +37,11 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
-  final String androidChannelKey = '';
-  final String iosChannelKey = '';
+  //final String androidChannelKey = '';
+  //final String iosChannelKey = '';
+
+  final String androidChannelKey = 'eyJzZXR0aW5nc191cmwiOiJodHRwczovL2NvbXBhc3NhcHBzLnplbmRlc2suY29tL21vYmlsZV9zZGtfYXBpL3NldHRpbmdzLzAxSDdHODkzMkE0R0RRU1FOMFRLUVNaNkpOLmpzb24ifQ==';
+  final String iosChannelKey = 'eyJzZXR0aW5nc191cmwiOiJodHRwczovL2NvbXBhc3NhcHBzLnplbmRlc2suY29tL21vYmlsZV9zZGtfYXBpL3NldHRpbmdzLzAxSDdHODkzMkE0R0RRU1FOMFRLUVNaNkpOLmpzb24ifQ==';
 
   @override
   void initState() {

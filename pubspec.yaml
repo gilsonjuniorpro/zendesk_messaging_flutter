@@ -33,6 +33,10 @@ dependencies:
   zendesk_messaging: ^2.8.0
   package_info_plus: ^5.0.1
   device_info_plus: ^9.1.1
+  #isar: ^3.1.0+1
+  #isar_flutter_libs: ^3.1.0+1
+  isar_flutter_libs: ^4.0.0-dev.14
+  isar: ^4.0.0-dev.14
 
 
   # The following adds the Cupertino Icons font to your application.
